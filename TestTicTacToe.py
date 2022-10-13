@@ -1,19 +1,12 @@
-import TicTacToe
 import unittest
+import TicTacToe
 
-class testTicTac(unittest.TestCase):
+class testTicTacToe(unittest.TestCase):
+    board = list(range(1, 10))
 
-    def board_create(self):
-        board = list(range(1, 10))
-        test_case = "-------------\n\
-        | 1 | 2 | 3 |\n\
-         -------------\n\
-        | 4 | 5 | 6 |\n\
-         -------------\n\
-        | 7 | 8 | 9 |\n\
-         -------------"
-        test_value = TicTacToe.dashboard(board)
-        self.assertEqual(test_case, test_value)
+    def test_one(self):
+        test_case = "-------------\n| 1 | 2 | 3 |\n-------------\n| 4 | 5 | 6 |\n-------------\n| 7 | 8 | 9 |\n-------------"
+        self.assertEqual(test_case, TicTacToe.dashboard(board=list(range(1,10))))
 
-    if __name__ == "__main__":
-        unittest.main()
+if __name__ == "__main__":
+    unittest.main()
